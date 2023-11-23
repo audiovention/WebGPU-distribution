@@ -34,6 +34,7 @@ else (EMSCRIPTEN)
 	if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
 
 		set(WGPU_RUNTIME_LIB ${WGPU}/lib/windows-${ARCH}/wgpu_native.lib)
+        target_link_libraries(webgpu INTERFACE "ws2_32" "D3DCompiler" "userenv" "ntdll" "Opengl32" "Bcrypt")
 		set_target_properties(
 			webgpu
 			PROPERTIES
