@@ -59,7 +59,7 @@ else (EMSCRIPTEN)
 
         elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 
-            set(WGPU_RUNTIME_LIB ${WGPU}/lib/macos-${ARCH}/libwgpu_native.a)
+            set(WGPU_RUNTIME_LIB ${WGPU}/lib/macos-universal/libwgpu_native.a)
             target_link_libraries(webgpu INTERFACE "-framework Metal" "-framework QuartzCore" "-framework MetalKit")
             set_target_properties(
                 webgpu
